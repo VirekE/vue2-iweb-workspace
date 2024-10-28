@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "env"
+    ]
+  ],
+  "plugins": [
+    "transform-react-jsx",
+    "syntax-dynamic-import",
+    "transform-object-assign",
+    "transform-class-properties",
+    "transform-decorators-legacy",
+    "transform-export-extensions",
+    "transform-object-rest-spread",
+    "transform-runtime",
+    "transform-remove-strict-mode",
+    "es6-promise"
+  ]
+}

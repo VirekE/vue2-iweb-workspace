@@ -1,0 +1,18 @@
+.importCatalog .successNum .num{
+    color:#409eff;
+    font-weight: 600;
+    padding: 0 10px;
+}
+
+.importCatalog .errorNum .num{
+    color:#f00;
+    font-weight: 600;
+    padding: 0 10px;
+}
+.importCatalog .notifyLink{
+    color:#409eff;
+    cursor: pointer;
+}
+.el-tooltip__popper.is-dark{
+    max-width: 300px;
+}

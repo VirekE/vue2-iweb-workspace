@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="33px" height="29px" viewBox="0 0 33 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>画板</title>
+    <defs>
+        <circle id="path-1" cx="12.5" cy="12.5" r="12.5"></circle>
+        <linearGradient x1="0%" y1="45.6177587%" x2="100%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#006CFC" offset="0%"></stop>
+            <stop stop-color="#0054DA" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-26.1%" y="-26.1%" width="152.2%" height="152.2%" filterUnits="objectBoundingBox" id="filter-4">
+            <feGaussianBlur stdDeviation="2" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="9.81134241%" y1="45.6177587%" x2="90.1886576%" y2="50%" id="linearGradient-5">
+            <stop stop-color="#006CFC" offset="0%"></stop>
+            <stop stop-color="#0054DA" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="画板" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="椭圆形备份-2" opacity="0.751408895" transform="translate(8.000000, 4.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="蒙版" fill-opacity="0.78" fill="#8DBBFF" xlink:href="#path-1"></use>
+            <circle fill="url(#linearGradient-3)" filter="url(#filter-4)" mask="url(#mask-2)" cx="4.5" cy="7.5" r="11.5"></circle>
+        </g>
+        <circle id="椭圆形" stroke="#A8CCFA" fill-opacity="0.1" fill="#8DBBFF" cx="20.5" cy="16.5" r="12"></circle>
+        <path d="M11.5,0 C14.9871238,0 18.1117412,1.55207494 20.2207275,4.00310042 L20.5,4 C13.5964406,4 8,9.59644063 8,16.5 C8,18.8247735 8.63463946,21.001319 9.74011932,22.8658375 C4.22417029,22.0190574 0,17.2528326 0,11.5 C0,5.14872538 5.14872538,0 11.5,0 Z" id="形状结合" fill="url(#linearGradient-5)"></path>
+    </g>
+</svg>

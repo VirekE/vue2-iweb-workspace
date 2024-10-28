@@ -1,0 +1,34 @@
+.shell{
+    height: 100%;
+}
+.app-wrapper{
+    position: absolute;
+    top: 55px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.main-container{
+    width:100%;
+    height:100%;
+    background:#f8f8f8;
+    position: relative;
+    padding-top: 34px;
+}
+.main{
+    margin: 0px;
+    background:#fff;
+    display: flex;
+    &>div{
+        padding:15px;
+        background:#f8f8f8;
+        height: 100%;
+        flex:1;
+        overflow-x: hidden;
+    }
+}
+/deep/.el-header{
+    padding:0px !important;
+    overflow:hidden;
+}

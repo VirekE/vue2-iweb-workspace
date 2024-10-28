@@ -1,0 +1,70 @@
+html, body,div, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img，button,input { margin:0; padding:0;font-family:"PingFang SC","Microsoft YaHei","微软雅黑"; }
+fieldset, img,input,button,textarea,table,tr,td{ border:none; padding:0;margin:0;outline-style:none;border:0; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0;}
+select, input { vertical-align:middle; }
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; }
+a{text-decoration: none;}
+img {border:0;vertical-align:middle;}
+body {
+    color:#666;
+    background-color: #ecedef;
+    font-family: "Microsoft YaHei";
+    -webkit-tap-highlight-color: transparent;
+}html, body,div, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, imgï¼Œbutton,input { margin:0; padding:0;font-family:"PingFang SC","Microsoft YaHei","å¾®è½¯é›…é»‘"; }
+fieldset, img,input,button,textarea{ border:none; padding:0;margin:0;outline-style:none;border:0; }
+table,tr,td {padding:0;margin:0;outline-style:none;/* border:none; */}
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0;}
+select, input { vertical-align:middle; }
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; }
+a{text-decoration: none;}
+img {border:0;vertical-align:middle;}
+body {
+    color:#666;
+    background-color: #fff;
+    font-family: "Microsoft YaHei";
+    -webkit-tap-highlight-color: transparent;
+}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+    line-height: 0;
+}
+.fl{float:left;}
+.fr{float:right;}
+
+/*html,body{box-sizing:border-box;min-height:100%;}*/
+html,body{box-sizing:border-box;height:100%;}
+
+i,em {font-style:normal;font-size:100%;}
+a,a:hover {text-decoration:none;}
+/**/
+@media \0screen\,screen\9{
+    .container{width:1200px;margin:0 auto;}
+}
+@media (min-width:793px) {
+    .container{width:1200px;margin:0 auto;}
+}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+    line-height: 0;
+}
+.fl{float:left;}
+.fr{float:right;}
+
+html,body{box-sizing:border-box;min-height:100%;}
+
+i,em {font-style:normal;font-size:100%;}
+a,a:hover {text-decoration:none;}

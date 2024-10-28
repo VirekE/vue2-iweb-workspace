@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@深圳-民意速办 事项管理</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <!--<link rel="stylesheet" href="//at.alicdn.com/t/font_966641_e11evt2t6z6.css">-->
+    <link nonce='2726c7f26c' rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <link nonce='2726c7f26c' rel="stylesheet" href="<%= htmlWebpackPlugin.files.publicPath %>static/font/icon/iconfont.css">
+    <link nonce='2726c7f26c' rel="stylesheet" href="<%= htmlWebpackPlugin.files.publicPath %>static/css/notify.css">
+    <!-- 高德地图 -->
+    <!--<script src="<%= htmlWebpackPlugin.files.publicPath %>static/plugins/amap/amap.js"></script>-->
+    <!--<script src="<%= htmlWebpackPlugin.files.publicPath %>static/plugins/amap/amap.ui.js"></script>-->
+    <script nonce='2726c7f26c' src="<%= htmlWebpackPlugin.files.publicPath %>static/plugins/jquery/jquery.js"></script>
+    <script nonce='2726c7f26c' src="<%= htmlWebpackPlugin.files.publicPath %>static/plugins/mqtt/mqttws31.min.js"></script>
+    <script nonce='2726c7f26c' src="<%= htmlWebpackPlugin.files.publicPath %>static/cform/cform-sdk.js"></script>
+    <!--        <script src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>-->
+    <!--        <link rel="stylesheet" href="https://res.wx.qq.com/mmbizwap/en_US/htmledition/mmbizappmsg/assets/appmsg.2ecabfb1.css">-->
+    <!--        <script src="https://res.wx.qq.com/mmbizwap/en_US/htmledition/js/../mmbizappmsg/assets/polyfills-legacy.aa8ff760.js#1"></script>-->
+    <!-- <script>
+         (function () {
+             var totalCount = 0,
+                 finishCount = 0;
+
+             function _loadVConsolePlugin() {
+                 window.vConsole = new window.VConsole();
+                 while (window.vConsolePlugins.length > 0) {
+                     var p = window.vConsolePlugins.shift();
+                     window.vConsole.addPlugin(p);
+                 }
+                 // 视频落地页h5有时候不会触发onload事件，导致vConsole无法渲染，这里手动强制渲染vConsole @baakqiu
+                 if (!window.vConsole.isInited) {
+                     window.vConsole._render();
+                     window.vConsole._mockTap();
+                     window.vConsole._bindEvent();
+                     window.vConsole._autoRun();
+                 }
+             }
+
+             function _addVConsole(uri, cb) {
+                 totalCount++;
+                 var node = document.createElement('SCRIPT');
+                 node.type = 'text/javascript';
+                 node.src = uri;
+                 node.setAttribute('nonce', '26507412');
+                 if (cb) {
+                     node.onload = cb;
+                 }
+                 document.getElementsByTagName('head')[0].appendChild(node);
+             }
+             if (
+                 (document.cookie && document.cookie.indexOf('vconsole_open=1') > -1)
+                 || location.href.indexOf('vconsole=1') > -1
+             ) {
+                 window.vConsolePlugins = [];
+                 _addVConsole('//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.2.2/vconsole.min5e401e.js', function () {
+                     // _addVConsole('plugin/vconsole-sources/1.0.1/vconsole-sources.min.js');
+                     _addVConsole('//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/plugin/vconsole-mpopt/1.0.1/vconsole-mpopt5e401e.js', _loadVConsolePlugin);
+                 });
+             }
+
+             // // 广告iframe预加载
+             try {
+                 var adIframeUrl = localStorage.getItem('__WXLS_ad_iframe_url');
+                 if (window === top) {
+                     if (adIframeUrl) {
+                         if (navigator.userAgent.indexOf('iPhone') > -1) {
+                             var img = new Image();
+                             img.src = adIframeUrl;
+                         } else {
+                             var link = document.createElement('link');
+                             link.rel = 'prefetch';
+                             link.href = adIframeUrl;
+                             document.getElementsByTagName('head')[0].appendChild(link);
+                         }
+                     }
+                 }
+             } catch (err) {
+
+             }
+
+         })();</script>
+     <script>
+         //兼容 IE
+         if (!window.console) window.console = { log: function() {} };
+         // 图片占位 @ekili
+         if (typeof getComputedStyle == 'undefined') {
+             if (document.body.currentStyle) {
+                 window.getComputedStyle = function(el) {
+                     return el.currentStyle;
+                 }
+             } else {
+                 window.getComputedStyle = {};
+             }
+         }
+         // 图片和视频预加载逻辑，记得H5和秒开要对齐逻辑
+         (function(){
+             window.__zoom = 1;
+
+             var ua = navigator.userAgent.toLowerCase();
+             var re = new RegExp("msie ([0-9]+[\.0-9]*)");
+             var version;
+             if (re.exec(ua) != null) {
+                 version = parseInt(RegExp.$1);
+             }
+             var isIE = false;
+             if (typeof version != 'undefined' && version >= 6 && version <= 9) {
+                 isIE = true;
+             }
+             var bodyWidth = '' * 1;
+             if (bodyWidth) {
+                 var styles = getComputedStyle(document.getElementById('page-content'));
+                 bodyWidth - parseFloat(styles.paddingLeft) - parseFloat(styles.paddingRight);
+             }
+             var getMaxWith = function () {
+                 var container = document.getElementById('img-content');
+                 var max_width = container.offsetWidth;
+                 !max_width && bodyWidth && (max_width = bodyWidth);
+                 var container_padding = 0;
+                 var container_style = getComputedStyle(container);
+                 container_padding = parseFloat(container_style.paddingLeft) + parseFloat(container_style.paddingRight);
+                 max_width -= container_padding;
+                 if (!max_width) {
+                     max_width = window.innerWidth - 30;      //防止offsetTop不可用，30为padding
+                 }
+                 return max_width;
+             };
+             var getParentWidth = function (dom) {
+                 var parent_width = 0;
+                 var parent = dom.parentNode;
+                 var outerWidth = 0;
+                 while (true) {
+                     if (!parent || parent.nodeType != 1) break;
+                     var parent_style = getComputedStyle(parent);
+                     if (!parent_style) break;
+                     parent_width = parent.clientWidth - parseFloat(parent_style.paddingLeft) - parseFloat(parent_style.paddingRight) - outerWidth;
+                     if (parent_width > 0) break;
+                     outerWidth += parseFloat(parent_style.paddingLeft) + parseFloat(parent_style.paddingRight) + parseFloat(parent_style.marginLeft) + parseFloat(parent_style.marginRight) + parseFloat(parent_style.borderLeftWidth) + parseFloat(parent_style.borderRightWidth);
+                     parent = parent.parentNode;
+                 }
+                 return parent_width;
+             }
+             var getOuterW = function (dom) {
+                 var style = getComputedStyle(dom),
+                     w = 0;
+                 if (!!style) {
+                     w = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight) + parseFloat(style.borderLeftWidth) + parseFloat(style.borderRightWidth);
+                 }
+                 return w;
+             };
+             var getOuterH = function (dom) {
+                 var style = getComputedStyle(dom),
+                     h = 0;
+                 if (!!style) {
+                     h = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom) + parseFloat(style.borderTopWidth) + parseFloat(style.borderBottomWidth);
+                 }
+                 return h;
+             };
+             var insertAfter = function (dom, afterDom) {
+                 var _p = afterDom.parentNode;
+                 if (!_p) {
+                     return;
+                 }
+                 if (_p.lastChild === afterDom) {
+                     _p.appendChild(dom);
+                 } else {
+                     _p.insertBefore(dom, afterDom.nextSibling);
+                 }
+             };
+             var getQuery = function (name, url) {
+                 //参数：变量名，url为空则表从当前页面的url中取
+                 var u = arguments[1] || window.location.search,
+                     reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"),
+                     r = u.substr(u.indexOf("\?") + 1).match(reg);
+                 return r != null ? r[2] : "";
+             };
+
+             /**
+              * 设置图片size
+              *
+              * @param {HTMLElement} item             图片元素
+              * @param {number} widthNum         宽度数值
+              * @param {string} widthUnit        宽度单位
+              * @param {number} ratio            宽高比
+              * @param {boolean} breakParentWidth 是否突破父元素宽度(父元素是否被撑大)
+              */
+             function setImgSize(item, widthNum, widthUnit, ratio, breakParentWidth) {
+                 setTimeout(function () {
+                     var img_padding_border = getOuterW(item) || 0;
+                     var img_padding_border_top_bottom = getOuterH(item) || 0;
+
+                     var isAccessibilityKey = 'isMpUserAccessibility';
+                     var isAccessMode = window.localStorage.getItem(isAccessibilityKey);
+
+                     // 如果设置的宽度超过了父元素最大宽度，则取父元素宽度
+                     if (widthNum > getParentWidth(item) && !breakParentWidth) {
+                         widthNum = getParentWidth(item);
+                     }
+
+                     height = (widthNum - img_padding_border) * ratio + img_padding_border_top_bottom;
+
+                     if (isIE || '0' === '1' || '' === '1' || isAccessMode === '1') { // 判一下是不是漫画原创，如果是，不走懒加载
+                         var url = item.getAttribute('data-src');
+                         item.src = url;
+
+                         // 不走懒加载但是需要跟懒加载一样去除占位高度
+                         item.style.height = 'auto';
+                     } else {
+                         if (parseFloat(widthNum, 10) > 40 && height > 40 && breakParentWidth) {
+                             item.className += ' img_loading';
+                         }
+                         item.src = "data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==";
+                         widthNum !== 'auto' && (item.style.cssText += ";width: " + widthNum + widthUnit + " !important;");
+                         widthNum !== 'auto' && (item.style.cssText += ";height: " + height + widthUnit + " !important;");
+                     }
+                 }, 10);
+             }
+             // 图片和视频预加载逻辑，记得H5和秒开要对齐逻辑
+             (function () {
+                 var images = document.getElementsByTagName('img');
+                 var length = images.length;
+                 var max_width = getMaxWith();
+                 for (var i = 0; i < length; ++i) {
+                     if (window.__second_open__ && images[i].getAttribute('__sec_open_place_holder__')) {
+                         continue;
+                     }
+                     var imageItem = images[i];
+                     var src_ = imageItem.getAttribute('data-src');
+                     var realSrc = imageItem.getAttribute('src');
+                     if (!src_ || realSrc) continue;
+                     // 图片原始宽度
+                     var originWidth = imageItem.getAttribute('data-w');
+                     var ratio_ = 1 * imageItem.getAttribute('data-ratio');
+
+                     var height = 100;
+                     if (ratio_ && ratio_ > 0) {
+                         var parent_width = getParentWidth(imageItem) || max_width;
+                         var initWidth = imageItem.style.width || imageItem.getAttribute('width') || originWidth || parent_width;
+                         initWidth = parseFloat(initWidth, 10) > max_width ? max_width : initWidth;
+                         // 有attribute或style中的width，写入_width属性，在图片加载完成时写入img标签
+                         if (initWidth) {
+                             imageItem.setAttribute('_width', !isNaN(initWidth * 1) ? initWidth + 'px' : initWidth);
+                         }
+                         // 使用百分比，则计算出像素宽度
+                         if (typeof initWidth === 'string' && initWidth.indexOf('%') !== -1) {
+                             initWidth = parseFloat(initWidth.replace('%', ''), 10) / 100 * parent_width;
+                         }
+                         // 使用auto，就是原始宽度
+                         if (initWidth === 'auto') {
+                             initWidth = originWidth;
+                         }
+
+                         var widthNum;
+                         var widthUnit;
+                         if (initWidth === 'auto') {
+                             widthNum = 'auto';
+                         } else {
+                             var res = /^(\d+(?:\.\d+)?)([a-zA-Z%]+)?$/.exec(initWidth);
+                             widthNum = res && res.length >= 2 ? res[1] : 0;
+                             widthUnit = res && res.length >= 3 && res[2] ? res[2] : 'px';
+                         }
+
+                         // 试探一下parent宽度在设置了图片的大小之后是否会变化
+                         setImgSize(imageItem, widthNum, widthUnit, ratio_, true);
+                         // 真正设置宽高
+                         (function (item, widthNumber, unit, ratio) {
+                             setTimeout(function () {
+                                 setImgSize(item, widthNumber, unit, ratio, false);
+                             });
+                         })(imageItem, widthNum, widthUnit, ratio_);
+                     } else {
+                         imageItem.style.cssText += ";visibility: hidden !important;";
+                     }
+                 }
+             })();
+             window.__videoDefaultRatio = 16 / 9;//默认值是16/9
+             window.__getVideoWh = function (dom) {
+                 var max_width = getMaxWith(),
+                     width = max_width,
+                     ratio_ = dom.getAttribute('data-ratio') * 1,//mark16/9
+                     arr = [4 / 3, 16 / 9],
+                     ret = arr[0],
+                     abs = Math.abs(ret - ratio_);
+                 if (!ratio_) { // 没有比例
+                     if (dom.getAttribute("data-mpvid")) { // MP视频
+                         ratio_ = 16 / 9;
+                     } else { // 非MP视频，需要兼容历史图文
+                         ratio_ = 4 / 3;
+                     }
+                 } else { // 有比例，则判断更接近4/3还是更接近16/9
+                     for (var j = 1, jl = arr.length; j < jl; j++) {
+                         var _abs = Math.abs(arr[j] - ratio_);
+                         if (_abs < abs) {
+                             abs = _abs;
+                             ret = arr[j];
+                         }
+                     }
+                     ratio_ = ret;
+                 }
+
+                 var parent_width = getParentWidth(dom) || max_width,
+                     width = width > parent_width ? parent_width : width,
+                     outerW = getOuterW(dom) || 0,
+                     outerH = getOuterH(dom) || 0,
+                     videoW = width - outerW,
+                     videoH = videoW / ratio_,
+                     speedDotH = 12, // 播放器新样式的进度条在最下面，为了避免遮住拖动的点点，需要额外设置高一些
+                     height = videoH + outerH + speedDotH;
+
+                 return { w: Math.ceil(width), h: Math.ceil(height), vh: videoH, vw: videoW, ratio: ratio_, sdh: speedDotH };
+             };
+
+             // 图片和视频预加载逻辑，记得H5和秒开要对齐逻辑
+             (function () {
+                 var iframe = document.getElementsByTagName('iframe');
+                 for (var i = 0, il = iframe.length; i < il; i++) {
+                     if (window.__second_open__ && iframe[i].getAttribute('__sec_open_place_holder__')) {
+                         continue;
+                     }
+                     var a = iframe[i];
+                     var src_ = a.getAttribute('src') || a.getAttribute('data-src') || "";
+
+                     if (!/^http(s)*\:\/\/v\.qq\.com\/iframe\/(preview|player)\.html\?/.test(src_)
+                         && !/^http(s)*\:\/\/mp\.weixin\.qq\.com\/mp\/readtemplate\?t=pages\/video_player_tmpl/.test(src_)
+                     ) {
+                         continue;
+                     }
+                     var vid = getQuery("vid", src_);
+                     if (!vid) {
+                         continue;
+                     }
+                     vid = vid.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");//清除前后空格
+                     a.removeAttribute('src');
+                     a.style.display = "none";
+                     var obj = window.__getVideoWh(a),
+                         videoPlaceHolderSpan = document.createElement('span'),
+                         videoPlayerIconSpan = document.createElement('span'),
+                         mydiv = document.createElement('img');
+
+                     videoPlaceHolderSpan.className = "js_img_loading db";
+                     videoPlaceHolderSpan.setAttribute("data-vid", vid);
+                     // videoPlaceHolderSpan.style.display = 'block';
+
+                     videoPlayerIconSpan.className = 'wx_video_context db'; // 预加载的视频封面图占位
+                     videoPlayerIconSpan.style.display = 'none';
+                     videoPlayerIconSpan.innerHTML = '<span class="wx_video_thumb_primary"></span><button class="wx_video_play_btn">播放</button><span class="wx_video_mask"></span>'; // 曝光后设置这里img的src
+
+                     mydiv.className = "img_loading";
+
+                     mydiv.src = "data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==";
+                     // mydiv.style.cssText += ';height:100%;width:100%;';
+                     // mydiv.setAttribute("data-vid",vid);
+                     videoPlaceHolderSpan.style.cssText = "width: " + obj.w + "px !important;";
+                     mydiv.style.cssText += ";width: " + obj.w + "px";
+                     videoPlaceHolderSpan.appendChild(videoPlayerIconSpan);
+                     videoPlaceHolderSpan.appendChild(mydiv);
+
+                     insertAfter(videoPlaceHolderSpan, a); // 在视频后面插入占位
+
+                     /* var parentNode = a.parentNode;
+                     var copyIframe = a;
+                     var index = i; */
+
+                     // 由于视频需要加一个转载的来源，所以这里需要提前设置高度
+                     function ajax(obj) {
+                         var url = obj.url;
+                         var xhr = new XMLHttpRequest();
+
+                         var data = null;
+                         if (typeof obj.data == "object") {
+                             var d = obj.data;
+                             data = [];
+                             for (var k in d) {
+                                 if (d.hasOwnProperty(k)) {
+                                     data.push(k + "=" + encodeURIComponent(d[k]));
+                                 }
+                             }
+                             data = data.join("&");
+                         } else {
+                             data = typeof obj.data == 'string' ? obj.data : null;
+                         }
+
+                         xhr.open('POST', url, true);
+                         xhr.onreadystatechange = function () {
+                             if (xhr.readyState == 4) {
+                                 if (xhr.status >= 200 && xhr.status < 400) {
+                                     obj.success && obj.success(xhr.responseText);
+                                 } else {
+                                     obj.error && obj.error(xhr);
+                                 }
+                                 obj.complete && obj.complete();
+                                 obj.complete = null;
+                             }
+                         };
+                         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+                         xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                         xhr.send(data);
+                     }
+
+                     var mid = "" || "" || "2247676309";
+                     var biz = "" || "MzU2MTY5NDE1Mw==";
+                     var sessionid = "" || "svr_d97a3123685";
+                     var idx = "";
+
+                     (function sendReq(parentNode, copyIframe, index, vid) {
+                         ajax({
+                             url: '/mp/videoplayer?vid=' + vid + '&mid=' + mid + '&idx=1&__biz=' + biz + '&sessionid=' + sessionid + '&f=json',
+                             type: "GET",
+                             dataType: 'json',
+                             success: function (json) {
+                                 var ret = JSON.parse(json || '{}');
+                                 var ori = ret.ori_status;
+                                 var hit_biz_headimg = ret.hit_biz_headimg + '/64';
+                                 var hit_nickname = ret.hit_nickname;
+                                 var hit_username = ret.hit_username;
+                                 var sourceBiz = ret.source_encode_biz;
+
+                                 var selfUserName = "gh_b89dd4c26d83";
+
+                                 if (ori === 2 && selfUserName !== hit_username) {
+                                     var videoBar = document.createElement('div');
+                                     var videoBarHtml = '<div class="wx-edui-video_source_link js_wx_tap_highlight wx_tap_card" id="' + (hit_username + index) + '" data-hit-username="' + hit_username + '" data-hit-biz="' + sourceBiz + '">';
+                                     videoBarHtml += '<div class="wx-edui-video_source_word">以下视频来源于</div>';
+                                     videoBarHtml += '<div class="wx-edui-video_account_info">';
+                                     videoBarHtml += '<div class="wx-edui-video_account_avatar" id="' + (hit_biz_headimg + index) + '" data-src="' + hit_biz_headimg + '"></div>';
+                                     videoBarHtml += '<div class="wx-edui-video_account_name">' + hit_nickname + '</div>';
+                                     videoBarHtml += '<i class="wx-edui-video_account_arrow"></i>';
+                                     videoBarHtml += '</div>';
+                                     videoBarHtml += '<div class="wx-edui-video_source_link__layer_mask"></div>';
+                                     videoBarHtml += '</div>';
+                                     videoBar.innerHTML = videoBarHtml;
+                                     var spanContainer = document.getElementById('js_mp_video_container_' + index);
+                                     if (spanContainer) {
+                                         spanContainer.parentNode.insertBefore(videoBar, spanContainer);
+                                     } else if (parentNode.contains && parentNode.contains(copyIframe)) {
+                                         parentNode.insertBefore(videoBar, copyIframe);
+                                     } else {
+                                         parentNode.insertBefore(videoBar, parentNode.firstElementChild);
+                                     }
+                                     var avatorEle = document.getElementById(hit_biz_headimg + index);
+                                     var avatorSrc = avatorEle.dataset.src;
+                                     console.log('avatorSrc' + avatorSrc);
+                                     if (ret.hit_biz_headimg) {
+                                         avatorEle.style.backgroundImage = 'url(' + avatorSrc + ')';
+                                     }
+                                 }
+                             },
+                             error: function (xhr) {
+                             }
+                         });
+                     })(a.parentNode, a, i, vid);
+
+                     a.style.cssText += ";width: " + obj.w + "px !important;";
+                     a.setAttribute("width", obj.w);
+                     if (window.__zoom != 1) {
+                         a.style.display = "block";
+                         videoPlaceHolderSpan.style.display = "none";
+                         a.setAttribute("_ratio", obj.ratio);
+                         a.setAttribute("_vid", vid);
+                     } else {
+                         videoPlaceHolderSpan.style.cssText += "height: " + (obj.h - obj.sdh) + "px !important;margin-bottom: " + obj.sdh + "px !important;";
+                         mydiv.style.cssText += "height: " + (obj.h - obj.sdh) + "px !important;";
+                         a.style.cssText += "height: " + obj.h + "px !important;";
+                         a.setAttribute("height", obj.h);
+                     }
+                     a.setAttribute("data-vh", obj.vh);
+                     a.setAttribute("data-vw", obj.vw);
+                     if (a.getAttribute("data-mpvid")) {
+                         a.setAttribute("data-src", location.protocol + "//mp.weixin.qq.com/mp/readtemplate?t=pages/video_player_tmpl&auto=0&vid=" + vid);
+                     } else {
+                         a.setAttribute("data-src", location.protocol + "//v.qq.com/iframe/player.html?vid=" + vid + "&width=" + obj.vw + "&height=" + obj.vh + "&auto=0");
+                     }
+                 }
+             })();
+
+             (function () {
+                 if (window.__zoom != 1) {
+                     if (!window.__second_open__) {
+                         document.getElementById('page-content').style.zoom = window.__zoom;
+                         var a = document.getElementById('activity-name');
+                         var b = document.getElementById('meta_content');
+                         if (!!a) {
+                             a.style.zoom = 1 / window.__zoom;
+                         }
+                         if (!!b) {
+                             b.style.zoom = 1 / window.__zoom;
+                         }
+                     }
+                     var images = document.getElementsByTagName('img');
+                     for (var i = 0, il = images.length; i < il; i++) {
+                         if (window.__second_open__ && images[i].getAttribute('__sec_open_place_holder__')) {
+                             continue;
+                         }
+                         images[i].style.zoom = 1 / window.__zoom;
+                     }
+                     var iframe = document.getElementsByTagName('iframe');
+                     for (var i = 0, il = iframe.length; i < il; i++) {
+                         if (window.__second_open__ && iframe[i].getAttribute('__sec_open_place_holder__')) {
+                             continue;
+                         }
+                         var a = iframe[i];
+                         a.style.zoom = 1 / window.__zoom;
+                         var src_ = a.getAttribute('data-src') || "";
+                         if (!/^http(s)*\:\/\/v\.qq\.com\/iframe\/(preview|player)\.html\?/.test(src_)
+                             && !/^http(s)*\:\/\/mp\.weixin\.qq\.com\/mp\/readtemplate\?t=pages\/video_player_tmpl/.test(src_)
+                         ) {
+                             continue;
+                         }
+                         var ratio = a.getAttribute("_ratio");
+                         var vid = a.getAttribute("_vid");
+                         a.removeAttribute("_ratio");
+                         a.removeAttribute("_vid");
+                         var vw = a.offsetWidth - (getOuterW(a) || 0);
+                         var vh = vw / ratio;
+                         var h = vh + (getOuterH(a) || 0)
+                         a.style.cssText += "height: " + h + "px !important;"
+                         a.setAttribute("height", h);
+                         if (/^http(s)*\:\/\/v\.qq\.com\/iframe\/(preview|player)\.html\?/.test(src_)) {
+                             a.setAttribute("data-src", location.protocol + "//v.qq.com/iframe/player.html?vid=" + vid + "&width=" + vw + "&height=" + vh + "&auto=0");
+                         }
+                         a.style.display = "none";
+                         var parent = a.parentNode;
+                         if (!parent) {
+                             continue;
+                         }
+                         for (var j = 0, jl = parent.children.length; j < jl; j++) {
+                             var child = parent.children[j];
+                             if (child.className.indexOf("img_loading") >= 0 && child.getAttribute("data-vid") == vid) {
+                                 child.style.cssText += "height: " + h + "px !important;";
+                                 child.style.display = "";
+                             }
+                         }
+                     }
+                 }
+             })();
+         })();
+     </script>
+     <script>window.vConsole = new window.VConsole();</script>-->
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" nonce='2726c7f26c' href="<%= htmlWebpackPlugin.files.publicPath %>static/css/ie-compatibility.css">
+    <script type="text/javascript">
+        var str = '<div class="ie-dialog" id="ieBlocker" ><table class="ie-notice"><tr><td><h2 class="title">我们不支持 IE 8 及以下版本浏览器</h2></td></tr><tr><td><h4 class="subtitle">It appears you’re using an unsupported browser</h4></td></tr><tr><td><div class="ie-box"><div class="desc">为了获得更好的浏览体验，我们强烈建议您使用较新版本的 Chrome、 Firefox、 Safari 等，或者升级到最新版本的IE浏览器。 如果您使用的是                                IE 11 或以上版本，请关闭“兼容性视图”。</div><div class="logos"><a href="http://www.google.cn/chrome/browser/desktop/index.html" target="_blank"                                    title="下载Chrome浏览器"><img src="<%= htmlWebpackPlugin.files.publicPath %>static/img/chrome.png"/></a><a href="http://www.firefox.com.cn" target="_blank" title="下载Firefox浏览器"><img src="<%= htmlWebpackPlugin.files.publicPath %>static/img/firefox.png"/></a><a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank"                                    title="升级IE浏览器"><img src="<%= htmlWebpackPlugin.files.publicPath %>static/img/ie.png"/></a></div><div>&nbsp;</div></div></td></tr></table></div>';
+        document.writeln(str);
+    </script>
+    <![endif]-->
+</head>
+<body>
+<div id="app">
+</div>
+</body>
+</html>

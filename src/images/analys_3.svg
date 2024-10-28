@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="125px" height="124px" viewBox="0 0 125 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>3</title>
+    <defs>
+        <linearGradient x1="55.1238057%" y1="30.1401984%" x2="55.1238057%" y2="118.564941%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.2" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="31.2704709%" x2="50%" y2="116.110484%" id="linearGradient-2">
+            <stop stop-color="#F8E5D8" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-33.3%" y="-93.8%" width="166.7%" height="287.5%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="5" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FFC100" offset="0%"></stop>
+            <stop stop-color="#FD8E00" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="路径-4备份-4" fill-opacity="0.5" fill="#FFFFFF" points="64.2727273 98.8534293 124.966216 70.3176973 60 40 -0.388839722 70.3176973"></polygon>
+        <path d="M-0.388839722,70.3176973 L64.2727273,98.8534293 L64.272,123.999697 L-0.389,123.999697 L-0.388839722,70.3176973 Z" id="形状结合备份-6" fill="url(#linearGradient-1)"></path>
+        <polygon id="路径-6备份-4" fill="url(#linearGradient-2)" points="124.966216 70.3176973 64.2727273 98.8534293 64 126 124.966216 126"></polygon>
+        <ellipse id="椭圆形备份-13" fill="#9A3100" opacity="0.574212937" filter="url(#filter-3)" cx="58.5" cy="79" rx="22.5" ry="8"></ellipse>
+        <circle id="椭圆形备份-15" fill="url(#linearGradient-4)" cx="58" cy="55" r="29"></circle>
+        <path d="M68.3754226,45.5948325 C68.7495223,45.7262468 69,46.085461 69,46.48893 L69,57.382255 C68.7157872,63.8414342 58.7517639,67.7742629 58.3287153,67.9385308 C58.2237983,67.9791102 58.1124136,68 58,68 C57.8881743,68 57.7760547,67.9792602 57.6712847,67.9385308 C57.2475011,67.7742629 47.2825224,63.8414342 47,57.4239971 L47,46.48893 C47,46.085461 47.2506247,45.7262468 47.6237322,45.5948325 L57.6978171,42.0509962 C57.8935029,41.9830013 58.1056519,41.9830013 58.3011539,42.0509962 L68.3754226,45.5948325 Z M52.9520947,53.7322109 C52.5121063,53.2492218 51.7906563,53.2397591 51.3435714,53.7125034 C50.8930655,54.1850913 50.8842584,54.9595083 51.3250838,55.4426147 L56.0459154,60.6320491 C56.2571389,60.8646675 56.5474439,60.9969499 56.850086,61 L56.8590387,61 C57.158733,61.0001563 57.4463085,60.8733873 57.6596792,60.6472208 L66.6623365,51.0926631 C67.1084389,50.6180809 67.1137159,49.8437031 66.6710344,49.3623954 C66.2320286,48.8850761 65.5112701,48.8765128 65.0616377,49.3530891 L56.8739961,58.0424347 L52.9520947,53.7322109 Z" id="Fill-1备份-2" fill="#FFFFFF"></path>
+    </g>
+</svg>

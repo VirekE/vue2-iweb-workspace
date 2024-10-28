@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="125px" height="124px" viewBox="0 0 125 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>2</title>
+    <defs>
+        <linearGradient x1="55.1238057%" y1="30.1401984%" x2="55.1238057%" y2="118.564941%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.2" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="31.2704709%" x2="50%" y2="116.110484%" id="linearGradient-2">
+            <stop stop-color="#D9EEE4" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-33.3%" y="-93.8%" width="166.7%" height="287.5%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="5" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#00E9C1" offset="0%"></stop>
+            <stop stop-color="#00CE8D" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="路径-4" fill-opacity="0.5" fill="#FFFFFF" points="64.6617273 98.8534293 125.355216 70.3176973 60.389 40 0.00016027832 70.3176973"></polygon>
+        <polygon id="形状结合" fill="url(#linearGradient-1)" points="0.000160278321 126 0.000160278321 70.3176973 64.6617273 98.8534293 64.6617273 126"></polygon>
+        <polygon id="路径-6" fill="url(#linearGradient-2)" points="125.355216 70.3176973 64.6617273 98.8534293 64.389 126 125.355216 126"></polygon>
+        <ellipse id="椭圆形" fill="#009A6A" opacity="0.739719209" filter="url(#filter-3)" cx="58.889" cy="79" rx="22.5" ry="8"></ellipse>
+        <circle id="椭圆形备份-3" fill="url(#linearGradient-4)" cx="58.389" cy="55" r="29"></circle>
+        <path d="M42.389,53.4983971 L51.2314907,58.8920907 L63.269059,48.8130834 L53.0710094,59.837618 L64.4802849,67.1545049 L69.1694694,43 L42.389,53.4983971 Z M53.1501586,68 L56.9309329,64.1563439 L53.1501586,61.8032816 L53.1501586,68 Z" id="Fill-1" fill="#FFFFFF"></path>
+    </g>
+</svg>
